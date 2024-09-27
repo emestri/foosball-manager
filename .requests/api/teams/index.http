@@ -1,0 +1,6 @@
+
+GET /api/teams
+Host: {{client.host}}
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{auth_token}}

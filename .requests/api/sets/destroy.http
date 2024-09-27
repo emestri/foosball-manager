@@ -1,0 +1,6 @@
+
+DELETE /api/games/3/sets/1
+Host: {{client.host}}
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{auth_token}}

@@ -1,0 +1,12 @@
+POST /api/games
+Host: {{client.host}}
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{auth_token}}
+
+{
+    "home_team_id": 1,
+    "guest_team_id": 2,
+    "location_id": 1,
+    "mode": "Single"
+}

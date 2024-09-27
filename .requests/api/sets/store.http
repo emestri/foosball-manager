@@ -1,0 +1,13 @@
+
+POST /api/games/3/sets
+Host: {{client.host}}
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{auth_token}}
+
+{
+    "home_forwarder_id": 1,
+    "guest_forwarder_id": 3,
+    "home_goals": 6,
+    "guest_goals": 5
+}

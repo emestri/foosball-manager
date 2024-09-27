@@ -1,0 +1,11 @@
+POST /api/token
+Host: {{client.host}}
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email": "test@example.com",
+    "password": "password"
+}
+
+> {% client.global.set("auth_token", response.body.token); %}

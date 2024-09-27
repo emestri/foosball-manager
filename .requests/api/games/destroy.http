@@ -1,0 +1,6 @@
+
+DELETE /api/games/2
+Host: {{client.host}}
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{auth_token}}
