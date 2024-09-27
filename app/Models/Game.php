@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Game\GameMode;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
@@ -68,5 +69,15 @@ class Game extends Model
     public function sets(): HasMany
     {
         return $this->hasMany(Set::class, 'game_id', 'id');
+    }
+
+    /**
+     * Get the location associated with the game.
+     *
+     * @return BelongsTo
+     */
+    public function location(): BelongsTo
+    {
+        return $this->belongsTo(Location::class);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Set extends Model
@@ -40,5 +41,15 @@ class Set extends Model
     public function guestForwarder(): HasOne
     {
         return $this->hasOne(User::class, 'id', 'guest_forwarder_id');
+    }
+
+    /**
+     * Get the game of the set.
+     *
+     * @return BelongsTo
+     */
+    public function game(): BelongsTo
+    {
+        return $this->belongsTo(Game::class);
     }
 }
