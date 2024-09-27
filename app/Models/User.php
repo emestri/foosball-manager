@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -51,10 +52,10 @@ class User extends Authenticatable
     /**
      * Get the location associated with the user.
      *
-     * @return HasOne
+     * @return BelongsTo
      */
-    public function location(): HasOne
+    public function location(): BelongsTo
     {
-        return $this->hasOne(Location::class);
+        return $this->belongsTo(Location::class);
     }
 }
